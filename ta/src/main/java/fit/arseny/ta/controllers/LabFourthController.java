@@ -34,6 +34,14 @@ public class LabFourthController {
     public String lab_fourth_post_add(@RequestParam String text){
 //        LabSecond tmp = new LabSecond(Float.parseFloat(a),Float.parseFloat(b),Float.parseFloat(c),Float.parseFloat(d));
         LabFourth tmp = new LabFourth(text);
+
+        tmp.setThree_3_letters_sequences();
+        tmp.setTotalCountOfWords();
+        tmp.setCountUniqueWords();
+        tmp.setTop8FrequentWordsByString();
+        tmp.setAmountWordsWithCharX();
+        tmp.setAmountWordsWith3differerentChars();
+
         labFourthRepository.save(tmp);
         return "redirect:/lab4";
     }

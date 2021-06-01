@@ -26,15 +26,14 @@ public class LabFourth {
 
     public LabFourth(String input_text){
         this.text = input_text;
-        this.totalCountOfWords = countTotalAmountOfWords();
-        this.countUniqueWords = countAmountOfUniqueWords();
-        List<String> top8FrequentWords = countTop8FrequentWords();
-        this.top8FrequentWordsByString = String.join(",", top8FrequentWords);
-        this.amountWordsWithCharX = countAmountWordsWithoutCharX();
-        this.amountWordsWith3differerentChars = countAmountWordsWith3differerentChars();
-        List<String> tmp = countTop3ThreeLeterSequencesWords();
-        this.three_3_letters_sequences = String.join(",", tmp);
-
+//        this.totalCountOfWords = countTotalAmountOfWords();
+//        this.countUniqueWords = countAmountOfUniqueWords();
+//        List<String> top8FrequentWords = countTop8FrequentWords();
+//        this.top8FrequentWordsByString = String.join(",", top8FrequentWords);
+//        this.amountWordsWithCharX = countAmountWordsWithoutCharX();
+//        this.amountWordsWith3differerentChars = countAmountWordsWith3differerentChars();
+//        List<String> tmp = countTop3ThreeLeterSequencesWords();
+//        this.three_3_letters_sequences = String.join(",", tmp);
     }
 
     public Integer countTotalAmountOfWords(){
@@ -151,47 +150,52 @@ public class LabFourth {
         return totalCountOfWords;
     }
 
-    public void setTotalCountOfWords(Integer totalCountOfWords) {
-        this.totalCountOfWords = totalCountOfWords;
-    }
-
     public Integer getCountUniqueWords() {
         return countUniqueWords;
-    }
-
-    public void setCountUniqueWords(Integer countUniqueWords) {
-        this.countUniqueWords = countUniqueWords;
     }
 
     public String getTop8FrequentWordsByString() {
         return top8FrequentWordsByString;
     }
 
-    public void setTop8FrequentWordsByString(String top8FrequentWordsByString) {
-        this.top8FrequentWordsByString = top8FrequentWordsByString;
-    }
-
     public Integer getAmountWordsWithCharX() {
         return amountWordsWithCharX;
-    }
-
-    public void setAmountWordsWithCharX(Integer amountWordsWithCharX) {
-        this.amountWordsWithCharX = amountWordsWithCharX;
     }
 
     public Integer getAmountWordsWith3differerentChars() {
         return amountWordsWith3differerentChars;
     }
 
-    public void setAmountWordsWith3differerentChars(Integer amountWordsWith3differerentChars) {
-        this.amountWordsWith3differerentChars = amountWordsWith3differerentChars;
-    }
-
     public String getThree_3_letters_sequences() {
         return three_3_letters_sequences;
     }
 
-    public void setThree_3_letters_sequences(String three_3_letters_sequences) {
-        this.three_3_letters_sequences = three_3_letters_sequences;
+
+///////////////////////////
+
+    public void setTotalCountOfWords() {
+        this.totalCountOfWords = countTotalAmountOfWords();
+    }
+
+    public void setCountUniqueWords() {
+        this.countUniqueWords = countAmountOfUniqueWords();
+    }
+
+    public void setTop8FrequentWordsByString() {
+        List<String> top8FrequentWords = countTop8FrequentWords();
+        this.top8FrequentWordsByString = String.join(",", top8FrequentWords);
+    }
+
+    public void setAmountWordsWithCharX() {
+        this.amountWordsWithCharX = countAmountWordsWithoutCharX();
+    }
+
+    public void setAmountWordsWith3differerentChars() {
+        this.amountWordsWith3differerentChars = countAmountWordsWith3differerentChars();
+    }
+
+    public void setThree_3_letters_sequences() {
+        List<String> tmp = countTop3ThreeLeterSequencesWords();
+        this.three_3_letters_sequences = String.join(",", tmp);
     }
 }
