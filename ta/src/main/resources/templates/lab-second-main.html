@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <aside class="col-sm-10">
+            <div class="card">
+                <article class="card-body">
+                    <h1><p th:text="${title}"/></h1>
+                        <div class="text-center">
+                            <div class="span2">
+                                <p><a class="btn btn-outline-info btn-lg btn-block" href="/lab2/add">Make new count</a></p>
+                                <p><a class="btn btn-outline-info btn-lg btn-block" href="/">Back to main page</a></p>
+                            </div>
+                        </div>
+                </article>
+            </div>
+        </aside>
+    </div>
+</div>
+
+
+<!--<form action="/lab2" method="post">-->
+<!--    <input type="number" name="char_a" placeholder="Input a">-->
+<!--    <button type="submit">Count</button>-->
+<!--</form>-->
+
+<div th:each="el: ${db_lab_second}">
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <aside class="col-sm-5">
+            <div class="card">
+                <article class="card-body">
+                    <table border="0" align="center" width="95%">
+                        <tr>
+                            <td align="center" width="80%">
+                                <h3>Number of count: </h3>
+                            </td>
+                            <td>
+                                <h3 th:text="${el.getId()}"></h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <hr>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <table border="0" align="center" width="95%">
+                        <tr>
+                            <td align="center">
+                                <h3>a</h3>
+                            </td>
+                            <td width="15%" align="center"><h3>=</h3></td>
+                            <td>
+                                <h3 th:text="${el.getA()}"></h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <h3>b</h3>
+                            </td>
+                            <td width="15%" align="center"><h3>=</h3></td>
+                            <td>
+                                <h3 th:text="${el.getB()}"></h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <h3>c</h3>
+                            </td>
+                            <td width="15%" align="center"><h3>=</h3></td>
+                            <td>
+                                <h3 th:text="${el.getC()}"></h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <h3>d</h3>
+                            </td>
+                            <td width="15%" align="center"><h3>=</h3></td>
+                            <td>
+                                <h3 th:text="${el.getD()}"></h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <h3>x1</h3>
+                            </td>
+                            <td width="15%" align="center"><h3>=</h3></td>
+                            <td>
+                                <h3 th:text="${el.getX1()}?:'Error'"></h3>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <h3>x2</h3>
+                            </td>
+                            <td width="15%" align="center"><h3>=</h3></td>
+                            <td>
+                                <h3 th:text="${el.getX2()}?:'Error'"></h3>
+                            </td>
+                        </tr>
+                    </table>
+
+<!--                        <h3 th:text="${el.b}"></h3>-->
+<!--                        <h3 th:text="${el.c}"></h3>-->
+<!--                        <h3 th:text="${el.d}"></h3>-->
+
+<!--                        <h3 th:text="${el.res}"></h3>-->
+<!--                    <div th:if="${el.res == null}" th:text="Error!">-->
+
+                    </div>
+                </article>
+            </div>
+        </aside>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

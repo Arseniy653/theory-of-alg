@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <aside class="col-sm-10">
+            <div class="card">
+                <article class="card-body">
+                    <h1><p th:text="${title}"/></h1>
+                    <div class="text-center">
+                        <div class="span2">
+                            <p><a class="btn btn-outline-info btn-lg btn-block" href="/lab4/add">Input new text</a></p>
+                            <p><a class="btn btn-outline-info btn-lg btn-block" href="/">Back to main page</a></p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<div th:each="el: ${db_lab_fourth}">
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center">
+            <aside class="col-sm-12">
+                <div class="card">
+                    <article class="card-body">
+                        <table border="0" align="center" width="100%">
+                            <tr>
+                                <td align="center" width="80%">
+                                    <h3>ID of text: </h3>
+                                </td>
+                                <td align="center">
+                                    <h3 th:text="${el.getId()}"></h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">Total count of words:</td>
+                                <td align="center" th:text="${el.getTotalCountOfWords()}"></td>
+                            </tr>
+                            <tr>
+                                <td align="center">Amount of unique words:</td>
+                                <td align="center" th:text="${el.getCountUniqueWords()}"></td>
+                            </tr>
+                            <tr>
+                                <td align="center">Top 8 Frequent Words: </td>
+                                <td th:text="${el.getTop8FrequentWordsByString()}"></td>
+                            </tr>
+                            <tr>
+                                <td align="center">Amount of words without char "x": </td>
+                                <td align="center" th:text="${el.getAmountWordsWithCharX()}"></td>
+                            </tr>
+                            <tr>
+                                <td align="center">Amount of words with only 3 different charts: </td>
+                                <td align="center" th:text="${el.getAmountWordsWith3differerentChars()}"></td>
+                            </tr>
+                            <tr>
+                                <td align="center">The first 3 three-letter sequences in the words of the text, which are most common: </td>
+                                <td align="center" th:text="${el.getThree_3_letters_sequences()}"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center"><h4>Text</h4></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="justify" th:text="${el.getText()}"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table border="0" align="center" width="100%">
+                            <tr>
+                                <td></td>
+                                <td width="75%" align="right">
+                                    <form th:action="'/lab4/' + ${el.getId} + '/remove'" method="post">
+                                        <button class="btn btn-warning" type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

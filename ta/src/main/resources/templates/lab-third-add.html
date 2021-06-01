@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <aside class="col-sm-10">
+            <div class="card">
+                <article class="card-body">
+                    <h1>New count</h1>
+                    <form action="/lab3/add" method="post">
+                        <input type="text" name="number" placeholder="Input number for checking" class="form-control"><br>
+                        <button type="submit" class="btn btn-success">Determine</button>
+                    </form>
+                </article>
+            </div>
+        </aside>
+    </div>
+</div>
+
+
+<!--<form action="/lab2" method="post">-->
+<!--    <input type="number" name="char_a" placeholder="Input a">-->
+<!--    <button type="submit">Count</button>-->
+<!--</form>-->
+
+<!--<div th:each="el: ${db_lab_second}">-->
+<!--    <h3 th:text="${el.a}"></h3>-->
+<!--</div>-->
+
+</body>
+</html>

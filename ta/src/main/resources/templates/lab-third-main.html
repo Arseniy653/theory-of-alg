@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <aside class="col-sm-10">
+            <div class="card">
+                <article class="card-body">
+                    <h1><p th:text="${title}"/></h1>
+                    <div class="text-center">
+                        <div class="span2">
+                            <p><a class="btn btn-outline-info btn-lg btn-block" href="/lab3/add">Determine if natural number is a palindrome</a></p>
+                            <p><a class="btn btn-outline-info btn-lg btn-block" href="/">Back to main page</a></p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<div th:each="el: ${db_lab_third}">
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center">
+            <aside class="col-sm-5">
+                <div class="card">
+                    <article class="card-body">
+                        <table border="0" align="center" width="95%">
+                            <tr>
+                                <td align="center" width="80%">
+                                    <h3>Number of count: </h3>
+                                </td>
+                                <td>
+                                    <h3 th:text="${el.getId()}"></h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <hr>
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <table border="0" align="center" width="95%">
+                            <tr>
+                                <td align="center">
+                                    <h3>number</h3>
+                                </td>
+                                <td width="15%" align="center"><h3>=</h3></td>
+                                <td>
+                                    <h3 th:text="${el.getNumber()}"></h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <h3>is palindrom</h3>
+                                </td>
+                                <td width="15%" align="center"><h3>:</h3></td>
+                                <td>
+                                    <h3 th:text="${el.getResult()}?:'Error'"></h3>
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+                </article>
+        </div>
+        </aside>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
