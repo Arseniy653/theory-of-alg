@@ -34,6 +34,7 @@ public class LabFourth {
         this.amountWordsWith3differerentChars = countAmountWordsWith3differerentChars();
         List<String> tmp = countTop3ThreeLeterSequencesWords();
         this.three_3_letters_sequences = String.join(",", tmp);
+
     }
 
     public Integer countTotalAmountOfWords(){
